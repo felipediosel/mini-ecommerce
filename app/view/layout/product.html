@@ -1,0 +1,72 @@
+<div class="container d-flex justify-content-start mt-5">
+    <form class="row g-3 needs-validation" novalidate action="index.php?pg=product&act={{act}}" method="post"
+        enctype="multipart/form-data">
+        <div class="col-md-4" style="display: none">
+            <label class="form-label">Id</label>
+            <input type="text" class="form-control" name="id" value="{{id}}">
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">Nome</label>
+            <input autofocus type="text" class="form-control" id="validationCustom01" value="{{name}}" required
+                name="name">
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustomValue" class="form-label">Preço</label>
+            <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">R$</span>
+                <input type="number" class="form-control" id="validationCustomValue"
+                    aria-describedby="inputGroupPrepend" required min="0.00" step="0.01" value="{{price}}" name="value">
+                <div class="invalid-feedback">
+                    Valor inválido <i class="fa-solid fa-xmark p-2"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <label for="validationCustom03" class="form-label">Imagem</label>
+            <input type="file" class="form-control" id="validationCustom03" name="image" {{required}}>
+            <div class="invalid-feedback">
+                Por favor informe um arquivo válido.
+            </div>
+        </div>
+        <div class="col-12">
+            <img src="{{imageurl}}" alt="">
+        </div>
+        <div class="col-md-8">
+            <label for="validationCustom05" class="form-label">Descrição</label>
+            <textarea rows="5" type="text" class="form-control" id="validationCustom05" name="info">{{info}}</textarea>
+            <div class="invalid-feedback">
+                Informe uma descrição.
+            </div>
+        </div>
+        <div class="col-12 mb-3">
+            <button class="btn btn-primary" type="submit">
+                <span class="p-1"><i class="fa-solid fa-check fa-xl"></i></span>
+                Confirmar
+            </button>
+        </div>
+    </form>
+</div>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+
+    document.getElementById("admin").classList.add('active');
+</script>

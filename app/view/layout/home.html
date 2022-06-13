@@ -1,0 +1,19 @@
+<div class="container mt-5 mb-5">
+    <div class="row row-cols-auto justify-content-center g-5">
+        {{products}}
+    </div>
+</div>
+<style>
+    .popover-header {
+        color: var(--bs-dark);
+    }
+</style>
+<script>
+    document.getElementById("shop").classList.add('active');
+
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    });
+</script>

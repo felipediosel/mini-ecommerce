@@ -1,0 +1,14 @@
+{
+    "name": "felip/mini-e-commerce",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "felipediosel",
+            "email": "felipe.diosel@gmail.com"
+        }
+    ]
+}

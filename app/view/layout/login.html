@@ -1,0 +1,58 @@
+<div class="container d-flex justify-content-start mt-5">
+    <form class="row g-3 needs-validation" novalidate action="index.php?pg=login&act=insert" method="post">
+        <div class="col-md-6">
+            <label for="staticEmail2" class="form-label">Usuário</label>
+            <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input type="text" class="form-control" id="validationCustomUsername"
+                    aria-describedby="inputGroupPrepend" required name="login" autofocus>
+                <div class="invalid-feedback">
+                    Informe o nome do usuário
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword2" class="form-label">Senha</label>
+            <input type="password" class="form-control" placeholder="" required name="password">
+            <div class="invalid-feedback">
+                Informe sua senha
+            </div>
+        </div>
+        <div class="col-12">
+            <a href="index.php?pg=register" class="link-warning">
+                <i class="fa-solid fa-user-check"></i>
+                Não tem uma conta? Registre-se!
+            </a>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">
+                <span class="p-1"><i class="fa-solid fa-arrow-right-to-bracket fa-xl"></i></span>
+                Entrar
+            </button>
+        </div>
+    </form>
+</div>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+
+    document.getElementById("user").classList.add('active');
+</script>
